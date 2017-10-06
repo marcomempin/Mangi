@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftyJSON
+import IGListKit
 
 struct Genre {
     let id: String
@@ -77,4 +78,16 @@ final class Movie: NSObject, JSONAbleType {
         return Movie(id: id, title: title, popularity: popularity, posterPath: posterPath, backdropPath: backdropPath, overview: overview, genres: genres, languages: languages, duration: duration)
     }
     
+}
+
+extension Movie: ListDiffable {
+    func diffIdentifier() -> NSObjectProtocol {
+        return self.id as NSObjectProtocol
+    }
+    
+    func isEqual(toDiffableObject object: ListDiffable?) -> Bool {
+        guard let object = object as? Movie else { return false }
+        if self === object { return true }
+        return self.id == object.id && self.title == object.title
+    }
 }
