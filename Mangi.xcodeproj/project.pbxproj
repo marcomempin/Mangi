@@ -25,6 +25,8 @@
 		EA3532621F873FF20040AFAE /* LabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3532611F873FF20040AFAE /* LabelCell.swift */; };
 		EA3532641F8747A50040AFAE /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3532631F8747A50040AFAE /* MovieDetailViewController.swift */; };
 		EA3532661F87486D0040AFAE /* MovieLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3532651F87486D0040AFAE /* MovieLoader.swift */; };
+		EA3532681F8755B40040AFAE /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3532671F8755B40040AFAE /* ButtonCell.swift */; };
+		EA35326D1F8756110040AFAE /* ButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA35326C1F8756110040AFAE /* ButtonCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		EA3532611F873FF20040AFAE /* LabelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelCell.swift; sourceTree = "<group>"; };
 		EA3532631F8747A50040AFAE /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		EA3532651F87486D0040AFAE /* MovieLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieLoader.swift; sourceTree = "<group>"; };
+		EA3532671F8755B40040AFAE /* ButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
+		EA35326C1F8756110040AFAE /* ButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,7 @@
 				EA3532491F870F600040AFAE /* Systems */,
 				EA3532521F871B4D0040AFAE /* ViewControllers */,
 				EA3532571F8722F40040AFAE /* Views */,
+				EA35326B1F8755FF0040AFAE /* Nibs */,
 				EA35325E1F872A500040AFAE /* Extensions */,
 			);
 			path = Mangi;
@@ -194,6 +199,7 @@
 				EA35325A1F8728580040AFAE /* ImageCell.swift */,
 				EA3532611F873FF20040AFAE /* LabelCell.swift */,
 				EA3532581F8723030040AFAE /* SpinnerCell.swift */,
+				EA3532671F8755B40040AFAE /* ButtonCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -204,6 +210,14 @@
 				EA35325F1F872A610040AFAE /* UIImageView+ImageFromServerURL.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EA35326B1F8755FF0040AFAE /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				EA35326C1F8756110040AFAE /* ButtonCell.xib */,
+			);
+			path = Nibs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +314,7 @@
 				EA3532281F8707040040AFAE /* LaunchScreen.storyboard in Resources */,
 				EA3532251F8707040040AFAE /* Assets.xcassets in Resources */,
 				EA3532231F8707040040AFAE /* Main.storyboard in Resources */,
+				EA35326D1F8756110040AFAE /* ButtonCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +443,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA3532591F8723030040AFAE /* SpinnerCell.swift in Sources */,
+				EA3532681F8755B40040AFAE /* ButtonCell.swift in Sources */,
 				EA35324D1F870F830040AFAE /* DiscoverLoader.swift in Sources */,
 				EA3532541F871B5F0040AFAE /* DiscoverViewController.swift in Sources */,
 				EA3532601F872A610040AFAE /* UIImageView+ImageFromServerURL.swift in Sources */,
