@@ -10,7 +10,6 @@
 		1206C8A4D98578F5721004CD /* Pods_MangiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB9FE15E5076428582FF2BFA /* Pods_MangiTests.framework */; };
 		46FC8DDB2B67BA1BC3591B34 /* Pods_Mangi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06FBDF934AB8476229F5CAD5 /* Pods_Mangi.framework */; };
 		EA35321E1F8707040040AFAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35321D1F8707040040AFAE /* AppDelegate.swift */; };
-		EA3532201F8707040040AFAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35321F1F8707040040AFAE /* ViewController.swift */; };
 		EA3532231F8707040040AFAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA3532211F8707040040AFAE /* Main.storyboard */; };
 		EA3532251F8707040040AFAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA3532241F8707040040AFAE /* Assets.xcassets */; };
 		EA3532281F8707040040AFAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA3532261F8707040040AFAE /* LaunchScreen.storyboard */; };
@@ -19,6 +18,7 @@
 		EA3532461F870E7B0040AFAE /* JSONAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3532451F870E7B0040AFAE /* JSONAble.swift */; };
 		EA35324D1F870F830040AFAE /* DiscoverLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35324C1F870F830040AFAE /* DiscoverLoader.swift */; };
 		EA35324F1F870FE30040AFAE /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35324E1F870FE30040AFAE /* Movie.swift */; };
+		EA3532541F871B5F0040AFAE /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3532531F871B5F0040AFAE /* DiscoverViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +40,6 @@
 		C4F4014B69812BD907C41934 /* Pods-Mangi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mangi.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mangi/Pods-Mangi.debug.xcconfig"; sourceTree = "<group>"; };
 		EA35321A1F8707040040AFAE /* Mangi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mangi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA35321D1F8707040040AFAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EA35321F1F8707040040AFAE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EA3532221F8707040040AFAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EA3532241F8707040040AFAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA3532271F8707040040AFAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,6 +51,7 @@
 		EA3532451F870E7B0040AFAE /* JSONAble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONAble.swift; sourceTree = "<group>"; };
 		EA35324C1F870F830040AFAE /* DiscoverLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverLoader.swift; sourceTree = "<group>"; };
 		EA35324E1F870FE30040AFAE /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		EA3532531F871B5F0040AFAE /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,13 +119,13 @@
 			children = (
 				EA35323F1F870E030040AFAE /* Networking */,
 				EA35321D1F8707040040AFAE /* AppDelegate.swift */,
-				EA35321F1F8707040040AFAE /* ViewController.swift */,
 				EA3532211F8707040040AFAE /* Main.storyboard */,
 				EA3532241F8707040040AFAE /* Assets.xcassets */,
 				EA3532261F8707040040AFAE /* LaunchScreen.storyboard */,
 				EA3532291F8707040040AFAE /* Info.plist */,
 				EA3532441F870E540040AFAE /* Models */,
 				EA3532491F870F600040AFAE /* Systems */,
+				EA3532521F871B4D0040AFAE /* ViewControllers */,
 			);
 			path = Mangi;
 			sourceTree = "<group>";
@@ -162,6 +162,14 @@
 				EA35324C1F870F830040AFAE /* DiscoverLoader.swift */,
 			);
 			path = Systems;
+			sourceTree = "<group>";
+		};
+		EA3532521F871B4D0040AFAE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EA3532531F871B5F0040AFAE /* DiscoverViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,7 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA35324D1F870F830040AFAE /* DiscoverLoader.swift in Sources */,
-				EA3532201F8707040040AFAE /* ViewController.swift in Sources */,
+				EA3532541F871B5F0040AFAE /* DiscoverViewController.swift in Sources */,
 				EA35324F1F870FE30040AFAE /* Movie.swift in Sources */,
 				EA35321E1F8707040040AFAE /* AppDelegate.swift in Sources */,
 				EA3532411F870E100040AFAE /* MangiAPI.swift in Sources */,
