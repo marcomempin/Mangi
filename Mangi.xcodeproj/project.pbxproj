@@ -22,6 +22,7 @@
 		EA3532591F8723030040AFAE /* SpinnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3532581F8723030040AFAE /* SpinnerCell.swift */; };
 		EA35325B1F8728580040AFAE /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35325A1F8728580040AFAE /* ImageCell.swift */; };
 		EA3532601F872A610040AFAE /* UIImageView+ImageFromServerURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35325F1F872A610040AFAE /* UIImageView+ImageFromServerURL.swift */; };
+		EA3532621F873FF20040AFAE /* LabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3532611F873FF20040AFAE /* LabelCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		EA3532581F8723030040AFAE /* SpinnerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerCell.swift; sourceTree = "<group>"; };
 		EA35325A1F8728580040AFAE /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		EA35325F1F872A610040AFAE /* UIImageView+ImageFromServerURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+ImageFromServerURL.swift"; sourceTree = "<group>"; };
+		EA3532611F873FF20040AFAE /* LabelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,8 +185,9 @@
 		EA3532571F8722F40040AFAE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				EA3532581F8723030040AFAE /* SpinnerCell.swift */,
 				EA35325A1F8728580040AFAE /* ImageCell.swift */,
+				EA3532611F873FF20040AFAE /* LabelCell.swift */,
+				EA3532581F8723030040AFAE /* SpinnerCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				EA35321E1F8707040040AFAE /* AppDelegate.swift in Sources */,
 				EA35325B1F8728580040AFAE /* ImageCell.swift in Sources */,
 				EA3532411F870E100040AFAE /* MangiAPI.swift in Sources */,
+				EA3532621F873FF20040AFAE /* LabelCell.swift in Sources */,
 				EA3532461F870E7B0040AFAE /* JSONAble.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
