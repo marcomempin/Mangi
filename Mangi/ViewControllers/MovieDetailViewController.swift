@@ -7,29 +7,77 @@
 //
 
 import UIKit
+import IGListKit
 
 class MovieDetailViewController: UIViewController {
 
+    let movieLoader = MovieLoader()
+    var movie: Movie!
+
+    // MARK: IGListKit
+    lazy var adapter: ListAdapter = {
+        return ListAdapter(updater: ListAdapterUpdater(), viewController: self, workingRangeSize: 0)
+    }()
+    
+    // MARK: UI
+    let collectionView: UICollectionView = {
+        let view = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        view.backgroundColor = .white
+        return view
+    }()
+    let activityLoader: UIActivityIndicatorView = {
+        let loader = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        loader.startAnimating()
+        return loader
+    }()
+    
+    // MARK: View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.title = movie.title
+        
+        view.addSubview(collectionView)
+        
+        adapter.collectionView = collectionView
+        adapter.dataSource = self
+        
+        getData()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        collectionView.frame = view.bounds
     }
-    */
+    
+    // MARK: Functions
+    func getData() {
+        movieLoader.getMovieDetails(for: Int(movie.id)!) { movie in
+            self.movie = movie
+            self.adapter.reloadData()
+        }
+    }
+}
 
+// MARK: - ListAdapterDataSource
+extension MovieDetailViewController: ListAdapterDataSource {
+    func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
+        return [movie as ListDiffable]
+    }
+    
+    func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
+        let movie = object as! Movie
+        let popularity = "Popularity: \((roundf(Float(movie.popularity)!) / 1000.0) * 100)% "
+        return ListStackedSectionController(sectionControllers:
+            [imageSectionController(with: movie.posterPath ?? movie.backdropPath ?? ""),
+             labelSectionController(with: movie.title),
+             labelSectionController(with: popularity),
+             labelSectionController(with: movie.overview),
+             labelSectionController(with: movie.genres!.count != 0 ? movie.genres!.minimalDescription : "Data unavailable"),
+             labelSectionController(with: movie.languages!.count != 0 ? movie.languages!.minimalDescription : "Data unavailable"),
+             labelSectionController(with: "\(movie.duration) minutes")])
+    }
+    
+    func emptyView(for listAdapter: ListAdapter) -> UIView? {
+        return listAdapter.objects().count != 0 ? nil : activityLoader
+    }
 }
