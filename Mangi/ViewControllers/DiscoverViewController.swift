@@ -26,25 +26,40 @@ class DiscoverViewController: UIViewController {
         view.backgroundColor = .white
         return view
     }()
+    let activityLoader: UIActivityIndicatorView = {
+        let loader = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        loader.startAnimating()
+        return loader
+    }()
+    let refreshControl = UIRefreshControl()
     
     // MARK: View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Discover"
         
-        self.dicoverLoader.getMovies { 
-            self.movies = self.dicoverLoader.movies
-            self.adapter.performUpdates(animated: true)
-        }
-        
+        refreshControl.addTarget(self, action: #selector(getData), for: .valueChanged)
+        collectionView.refreshControl = refreshControl
         view.addSubview(collectionView)
+        
         adapter.collectionView = collectionView
         adapter.dataSource = self
+        
+        getData()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView.frame = view.bounds
+    }
+    
+    // MARK: Functions
+    func getData() {
+        self.dicoverLoader.getMovies {
+            self.movies = self.dicoverLoader.movies
+            self.refreshControl.endRefreshing()
+            self.adapter.performUpdates(animated: true)
+        }
     }
 }
 
@@ -54,10 +69,18 @@ extension DiscoverViewController: ListAdapterDataSource {
     }
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
-        return ListSectionController()
+        switch object {
+            
+        case is Movie:
+            let movie = object as! Movie
+            return ListStackedSectionController(sectionControllers: [imageSectionController(with: movie.posterPath ?? movie.backdropPath ?? "")])
+            
+        default:
+            return spinnerSectionController()
+        }
     }
     
     func emptyView(for listAdapter: ListAdapter) -> UIView? {
-        return nil
+        return listAdapter.objects().count != 0 ? nil : activityLoader
     }
 }
