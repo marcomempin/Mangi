@@ -27,6 +27,7 @@
 		EA3532661F87486D0040AFAE /* MovieLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3532651F87486D0040AFAE /* MovieLoader.swift */; };
 		EA3532681F8755B40040AFAE /* ButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3532671F8755B40040AFAE /* ButtonCell.swift */; };
 		EA35326D1F8756110040AFAE /* ButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA35326C1F8756110040AFAE /* ButtonCell.xib */; };
+		EA35326F1F875A750040AFAE /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35326E1F875A750040AFAE /* HeaderCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		EA3532651F87486D0040AFAE /* MovieLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieLoader.swift; sourceTree = "<group>"; };
 		EA3532671F8755B40040AFAE /* ButtonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonCell.swift; sourceTree = "<group>"; };
 		EA35326C1F8756110040AFAE /* ButtonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonCell.xib; sourceTree = "<group>"; };
+		EA35326E1F875A750040AFAE /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 				EA3532611F873FF20040AFAE /* LabelCell.swift */,
 				EA3532581F8723030040AFAE /* SpinnerCell.swift */,
 				EA3532671F8755B40040AFAE /* ButtonCell.swift */,
+				EA35326E1F875A750040AFAE /* HeaderCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				EA3532541F871B5F0040AFAE /* DiscoverViewController.swift in Sources */,
 				EA3532601F872A610040AFAE /* UIImageView+ImageFromServerURL.swift in Sources */,
 				EA35324F1F870FE30040AFAE /* Movie.swift in Sources */,
+				EA35326F1F875A750040AFAE /* HeaderCell.swift in Sources */,
 				EA35321E1F8707040040AFAE /* AppDelegate.swift in Sources */,
 				EA35325B1F8728580040AFAE /* ImageCell.swift in Sources */,
 				EA3532411F870E100040AFAE /* MangiAPI.swift in Sources */,
