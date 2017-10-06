@@ -18,6 +18,7 @@
 		EA3532411F870E100040AFAE /* MangiAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3532401F870E100040AFAE /* MangiAPI.swift */; };
 		EA3532461F870E7B0040AFAE /* JSONAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3532451F870E7B0040AFAE /* JSONAble.swift */; };
 		EA35324D1F870F830040AFAE /* DiscoverLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35324C1F870F830040AFAE /* DiscoverLoader.swift */; };
+		EA35324F1F870FE30040AFAE /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35324E1F870FE30040AFAE /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		EA3532401F870E100040AFAE /* MangiAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MangiAPI.swift; sourceTree = "<group>"; };
 		EA3532451F870E7B0040AFAE /* JSONAble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONAble.swift; sourceTree = "<group>"; };
 		EA35324C1F870F830040AFAE /* DiscoverLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverLoader.swift; sourceTree = "<group>"; };
+		EA35324E1F870FE30040AFAE /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				EA3532451F870E7B0040AFAE /* JSONAble.swift */,
+				EA35324E1F870FE30040AFAE /* Movie.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 			files = (
 				EA35324D1F870F830040AFAE /* DiscoverLoader.swift in Sources */,
 				EA3532201F8707040040AFAE /* ViewController.swift in Sources */,
+				EA35324F1F870FE30040AFAE /* Movie.swift in Sources */,
 				EA35321E1F8707040040AFAE /* AppDelegate.swift in Sources */,
 				EA3532411F870E100040AFAE /* MangiAPI.swift in Sources */,
 				EA3532461F870E7B0040AFAE /* JSONAble.swift in Sources */,
