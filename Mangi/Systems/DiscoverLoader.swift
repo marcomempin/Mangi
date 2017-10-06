@@ -12,8 +12,13 @@ import Moya
 class DiscoverLoader {
     
     var movies: [Movie] = []
+    var currentPage: Int!
     
     func getMovies(for page: Int = 1, completion: @escaping () -> Void) {
+        currentPage = page
+        if currentPage == 1 {
+            movies.removeAll()
+        }
         let provider = MoyaProvider<MangiAPI>()
         provider.request(.discover(page: page)) { result in
             switch result {
@@ -28,6 +33,7 @@ class DiscoverLoader {
                         self.movies.append(movie)
                     }
                     
+                    self.currentPage = objectDictionary["page"] as! Int + 1
                     completion()
                     
                 } catch {
