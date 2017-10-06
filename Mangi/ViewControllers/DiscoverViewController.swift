@@ -32,6 +32,8 @@ class DiscoverViewController: UIViewController {
         return loader
     }()
     let refreshControl = UIRefreshControl()
+    var loading = false
+    let spinToken = "spinner"
     
     // MARK: View Lifecycle
     override func viewDidLoad() {
@@ -44,6 +46,7 @@ class DiscoverViewController: UIViewController {
         
         adapter.collectionView = collectionView
         adapter.dataSource = self
+        adapter.scrollViewDelegate = self
         
         getData()
     }
@@ -65,11 +68,20 @@ class DiscoverViewController: UIViewController {
 
 extension DiscoverViewController: ListAdapterDataSource {
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
-        return movies
+        var objects = movies as [ListDiffable]
+        
+        if loading {
+            objects.append(spinToken as ListDiffable)
+        }
+        
+        return objects
     }
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
         switch object {
+            
+        case is String:
+            return spinnerSectionController()
             
         case is Movie:
             let movie = object as! Movie
@@ -82,5 +94,26 @@ extension DiscoverViewController: ListAdapterDataSource {
     
     func emptyView(for listAdapter: ListAdapter) -> UIView? {
         return listAdapter.objects().count != 0 ? nil : activityLoader
+    }
+}
+
+// MARK: - UIScrollViewDelegate
+extension DiscoverViewController: UIScrollViewDelegate {
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let distance = scrollView.contentSize.height - (targetContentOffset.pointee.y + scrollView.bounds.height)
+        if !loading && distance < 200 {
+            loading = true
+            adapter.performUpdates(animated: true, completion: nil)
+            DispatchQueue.global(qos: .default).async {
+                DispatchQueue.main.async {
+                    self.loading = false
+                    self.dicoverLoader.getMovies(for: self.dicoverLoader.currentPage) {
+                        self.movies = self.dicoverLoader.movies
+                        self.adapter.performUpdates(animated: true)
+                    }
+                }
+            }
+        }
     }
 }
