@@ -10,14 +10,22 @@ import UIKit
 import SwiftyJSON
 import IGListKit
 
-struct Genre {
+struct Genre: CustomStringConvertible {
     let id: String
     let name: String
+    
+    var description: String {
+        return name
+    }
 }
 
-struct Language {
+struct Language: CustomStringConvertible {
     let iso: String
     let name: String
+    
+    var description: String {
+        return name
+    }
 }
 
 final class Movie: NSObject, JSONAbleType {
@@ -89,5 +97,13 @@ extension Movie: ListDiffable {
         guard let object = object as? Movie else { return false }
         if self === object { return true }
         return self.id == object.id && self.title == object.title
+    }
+}
+
+// MARK: Sequence Extension
+// https://stackoverflow.com/a/31093744/737370
+extension Sequence {
+    var minimalDescription: String {
+        return map { "\($0)" }.joined(separator: ", ")
     }
 }
