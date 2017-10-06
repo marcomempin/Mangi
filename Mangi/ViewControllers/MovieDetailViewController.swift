@@ -74,13 +74,13 @@ extension MovieDetailViewController: ListAdapterDataSource {
              headerSectionController(with: "POPULARITY"),
              labelSectionController(with: popularity),
              headerSectionController(with: "SYNOPSIS"),
-             labelSectionController(with: movie.overview),
+             labelSectionController(with: movie.overview.isEmpty ? "Data unavailable" : movie.overview),
              headerSectionController(with: movie.genres!.count > 1 ? "GENRES" : "GENRE"),
              labelSectionController(with: movie.genres!.count != 0 ? movie.genres!.minimalDescription : "Data unavailable"),
              headerSectionController(with: movie.languages!.count > 1 ? "LANGUAGES" : "LANGUAGE"),
              labelSectionController(with: movie.languages!.count != 0 ? movie.languages!.minimalDescription : "Data unavailable"),
              headerSectionController(with: "DURATION"),
-             labelSectionController(with: "\(movie.duration) minutes"),
+             labelSectionController(with: movie.duration.isEmpty ? "Data unavailable" : "\(movie.duration) minutes"),
              buttonSectionController()])
     }
     
