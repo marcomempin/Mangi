@@ -23,6 +23,8 @@
 		EA35325B1F8728580040AFAE /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35325A1F8728580040AFAE /* ImageCell.swift */; };
 		EA3532601F872A610040AFAE /* UIImageView+ImageFromServerURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35325F1F872A610040AFAE /* UIImageView+ImageFromServerURL.swift */; };
 		EA3532621F873FF20040AFAE /* LabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3532611F873FF20040AFAE /* LabelCell.swift */; };
+		EA3532641F8747A50040AFAE /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3532631F8747A50040AFAE /* MovieDetailViewController.swift */; };
+		EA3532661F87486D0040AFAE /* MovieLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3532651F87486D0040AFAE /* MovieLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		EA35325A1F8728580040AFAE /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		EA35325F1F872A610040AFAE /* UIImageView+ImageFromServerURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+ImageFromServerURL.swift"; sourceTree = "<group>"; };
 		EA3532611F873FF20040AFAE /* LabelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelCell.swift; sourceTree = "<group>"; };
+		EA3532631F8747A50040AFAE /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		EA3532651F87486D0040AFAE /* MovieLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				EA35324C1F870F830040AFAE /* DiscoverLoader.swift */,
+				EA3532651F87486D0040AFAE /* MovieLoader.swift */,
 			);
 			path = Systems;
 			sourceTree = "<group>";
@@ -178,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				EA3532531F871B5F0040AFAE /* DiscoverViewController.swift */,
+				EA3532631F8747A50040AFAE /* MovieDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -430,7 +436,9 @@
 				EA35325B1F8728580040AFAE /* ImageCell.swift in Sources */,
 				EA3532411F870E100040AFAE /* MangiAPI.swift in Sources */,
 				EA3532621F873FF20040AFAE /* LabelCell.swift in Sources */,
+				EA3532641F8747A50040AFAE /* MovieDetailViewController.swift in Sources */,
 				EA3532461F870E7B0040AFAE /* JSONAble.swift in Sources */,
+				EA3532661F87486D0040AFAE /* MovieLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
