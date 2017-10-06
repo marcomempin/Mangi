@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ux0-ii-Yk9">
-                        <rect key="frame" x="8" y="12" width="304" height="30"/>
+                        <rect key="frame" x="15" y="12" width="290" height="30"/>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                         <state key="normal" title="Book the movie">
@@ -34,10 +34,10 @@
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="Ux0-ii-Yk9" firstAttribute="leading" secondItem="w4z-x6-xJF" secondAttribute="leading" constant="8" id="2ac-Wh-Ibi"/>
+                <constraint firstItem="Ux0-ii-Yk9" firstAttribute="leading" secondItem="w4z-x6-xJF" secondAttribute="leading" constant="15" id="2ac-Wh-Ibi"/>
                 <constraint firstItem="Ux0-ii-Yk9" firstAttribute="centerX" secondItem="w4z-x6-xJF" secondAttribute="centerX" id="Ea5-sz-qUh"/>
                 <constraint firstItem="Ux0-ii-Yk9" firstAttribute="centerY" secondItem="w4z-x6-xJF" secondAttribute="centerY" id="Y6n-2x-jNt"/>
-                <constraint firstAttribute="trailing" secondItem="Ux0-ii-Yk9" secondAttribute="trailing" constant="8" id="b32-x7-geZ"/>
+                <constraint firstAttribute="trailing" secondItem="Ux0-ii-Yk9" secondAttribute="trailing" constant="15" id="b32-x7-geZ"/>
             </constraints>
             <connections>
                 <outlet property="actionButton" destination="Ux0-ii-Yk9" id="tCC-DR-Lse"/>
