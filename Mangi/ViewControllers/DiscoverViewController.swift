@@ -86,8 +86,13 @@ extension DiscoverViewController: ListAdapterDataSource {
             
         case is Movie:
             let movie = object as! Movie
-            let popularity = "Popularity: \((roundf(Float(movie.popularity)!) / 1000.0) * 100)% "
-            return ListStackedSectionController(sectionControllers: [imageSectionController(with: movie.posterPath ?? movie.backdropPath ?? ""), labelSectionController(with: movie.title), labelSectionController(with: popularity)])
+            let popularity = "\((roundf(Float(movie.popularity)!) / 1000.0) * 100)% "
+            return ListStackedSectionController(sectionControllers:
+                [imageSectionController(with: movie.posterPath ?? movie.backdropPath ?? ""),
+                 headerSectionController(with: "TITLE"),
+                 labelSectionController(with: movie.title),
+                 headerSectionController(with: "POPULARITY"),
+                 labelSectionController(with: popularity)])
             
         default:
             return spinnerSectionController()

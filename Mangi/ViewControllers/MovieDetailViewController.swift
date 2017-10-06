@@ -66,14 +66,20 @@ extension MovieDetailViewController: ListAdapterDataSource {
     
     func listAdapter(_ listAdapter: ListAdapter, sectionControllerFor object: Any) -> ListSectionController {
         let movie = object as! Movie
-        let popularity = "Popularity: \((roundf(Float(movie.popularity)!) / 1000.0) * 100)% "
+        let popularity = "\((roundf(Float(movie.popularity)!) / 1000.0) * 100)% "
         return ListStackedSectionController(sectionControllers:
             [imageSectionController(with: movie.posterPath ?? movie.backdropPath ?? ""),
+             headerSectionController(with: "TITLE"),
              labelSectionController(with: movie.title),
+             headerSectionController(with: "POPULARITY"),
              labelSectionController(with: popularity),
+             headerSectionController(with: "SYNOPSIS"),
              labelSectionController(with: movie.overview),
+             headerSectionController(with: movie.genres!.count > 1 ? "GENRES" : "GENRE"),
              labelSectionController(with: movie.genres!.count != 0 ? movie.genres!.minimalDescription : "Data unavailable"),
+             headerSectionController(with: movie.languages!.count > 1 ? "LANGUAGES" : "LANGUAGE"),
              labelSectionController(with: movie.languages!.count != 0 ? movie.languages!.minimalDescription : "Data unavailable"),
+             headerSectionController(with: "DURATION"),
              labelSectionController(with: "\(movie.duration) minutes"),
              buttonSectionController()])
     }
