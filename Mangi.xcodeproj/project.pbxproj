@@ -17,6 +17,7 @@
 		EA3532331F8707040040AFAE /* MangiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3532321F8707040040AFAE /* MangiTests.swift */; };
 		EA3532411F870E100040AFAE /* MangiAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3532401F870E100040AFAE /* MangiAPI.swift */; };
 		EA3532461F870E7B0040AFAE /* JSONAble.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3532451F870E7B0040AFAE /* JSONAble.swift */; };
+		EA35324D1F870F830040AFAE /* DiscoverLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35324C1F870F830040AFAE /* DiscoverLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		EA3532341F8707040040AFAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA3532401F870E100040AFAE /* MangiAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MangiAPI.swift; sourceTree = "<group>"; };
 		EA3532451F870E7B0040AFAE /* JSONAble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONAble.swift; sourceTree = "<group>"; };
+		EA35324C1F870F830040AFAE /* DiscoverLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				EA3532261F8707040040AFAE /* LaunchScreen.storyboard */,
 				EA3532291F8707040040AFAE /* Info.plist */,
 				EA3532441F870E540040AFAE /* Models */,
+				EA3532491F870F600040AFAE /* Systems */,
 			);
 			path = Mangi;
 			sourceTree = "<group>";
@@ -148,6 +151,14 @@
 				EA3532451F870E7B0040AFAE /* JSONAble.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		EA3532491F870F600040AFAE /* Systems */ = {
+			isa = PBXGroup;
+			children = (
+				EA35324C1F870F830040AFAE /* DiscoverLoader.swift */,
+			);
+			path = Systems;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,6 +382,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA35324D1F870F830040AFAE /* DiscoverLoader.swift in Sources */,
 				EA3532201F8707040040AFAE /* ViewController.swift in Sources */,
 				EA35321E1F8707040040AFAE /* AppDelegate.swift in Sources */,
 				EA3532411F870E100040AFAE /* MangiAPI.swift in Sources */,
