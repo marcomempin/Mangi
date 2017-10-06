@@ -21,7 +21,7 @@ func imageSectionController(with imageURL: String) -> ListSingleSectionControlle
     
     let sizeBlock = { (item: Any, context: ListCollectionContext?) -> CGSize in
         guard let context = context else { return .zero }
-        return CGSize(width: context.containerSize.width, height: context.containerSize.width / 2)
+        return CGSize(width: context.containerSize.width, height: context.containerSize.width * 1.65)
     }
     
     return ListSingleSectionController(cellClass: ImageCell.self,
@@ -34,7 +34,7 @@ class ImageCell: UICollectionViewCell {
     
     let imageView: UIImageView = {
         let view = UIImageView()
-        view.contentMode = .scaleAspectFit
+        view.contentMode = .scaleAspectFill
         view.backgroundColor = .white
         view.clipsToBounds = true
         return view
