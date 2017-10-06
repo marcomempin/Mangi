@@ -102,7 +102,9 @@ extension DiscoverViewController: ListAdapterDataSource {
 // MARK: - ListSingleSectionControllerDelegate
 extension DiscoverViewController: ListSingleSectionControllerDelegate {
     func didSelect(_ sectionController: ListSingleSectionController, with object: Any) {
-        
+        let movieDetailViewController = MovieDetailViewController()
+        movieDetailViewController.movie = object as! Movie
+        self.navigationController?.pushViewController(movieDetailViewController, animated: true)
     }
 }
 
