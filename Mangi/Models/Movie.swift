@@ -24,7 +24,7 @@ final class Movie: NSObject, JSONAbleType {
     let id: String
     let title: String
     let popularity: String
-    let posterPath: String
+    let posterPath: String?
     let backdropPath: String?
     let overview: String
     let genres: [Genre]?
