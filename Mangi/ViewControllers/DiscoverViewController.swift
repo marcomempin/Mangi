@@ -66,6 +66,7 @@ class DiscoverViewController: UIViewController {
     }
 }
 
+// MARK: - ListAdapterDataSource
 extension DiscoverViewController: ListAdapterDataSource {
     func objects(for listAdapter: ListAdapter) -> [ListDiffable] {
         var objects = movies as [ListDiffable]
@@ -85,7 +86,8 @@ extension DiscoverViewController: ListAdapterDataSource {
             
         case is Movie:
             let movie = object as! Movie
-            return ListStackedSectionController(sectionControllers: [imageSectionController(with: movie.posterPath ?? movie.backdropPath ?? "")])
+            let popularity = "Popularity: \((roundf(Float(movie.popularity)!) / 1000.0) * 100)% "
+            return ListStackedSectionController(sectionControllers: [imageSectionController(with: movie.posterPath ?? movie.backdropPath ?? ""), labelSectionController(with: movie.title), labelSectionController(with: popularity)])
             
         default:
             return spinnerSectionController()
@@ -94,6 +96,13 @@ extension DiscoverViewController: ListAdapterDataSource {
     
     func emptyView(for listAdapter: ListAdapter) -> UIView? {
         return listAdapter.objects().count != 0 ? nil : activityLoader
+    }
+}
+
+// MARK: - ListSingleSectionControllerDelegate
+extension DiscoverViewController: ListSingleSectionControllerDelegate {
+    func didSelect(_ sectionController: ListSingleSectionController, with object: Any) {
+        
     }
 }
 
