@@ -23,7 +23,9 @@ extension UIImageView {
             newURLString = baseURL.appending(fileSize).appending(urlString)
         }
         
-        print(newURLString)
+        #if DEBUG
+            print(newURLString)
+        #endif
         
         URLSession.shared.dataTask(with: NSURL(string: newURLString)! as URL, completionHandler: { (data, response, error) -> Void in
             
