@@ -56,6 +56,16 @@ class DiscoverViewController: UIViewController {
         collectionView.frame = view.bounds
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        self.navigationItem.title = " "
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationItem.title = "Discover"
+    }
+    
     // MARK: Functions
     func getData() {
         self.dicoverLoader.getMovies {
