@@ -24,9 +24,13 @@ func imageSectionController(with imageURL: String) -> ListSingleSectionControlle
         return CGSize(width: context.containerSize.width, height: context.containerSize.width * 1.65)
     }
     
-    return ListSingleSectionController(cellClass: ImageCell.self,
-                                       configureBlock: configureBlock,
-                                       sizeBlock: sizeBlock)
+    let sectionController = ListSingleSectionController(cellClass: ImageCell.self,
+                                                        configureBlock: configureBlock,
+                                                        sizeBlock: sizeBlock)
+    
+    sectionController.selectionDelegate = sectionController.viewController as! ListSingleSectionControllerDelegate?
+    
+    return sectionController
 }
 
 
