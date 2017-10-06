@@ -74,7 +74,8 @@ extension MovieDetailViewController: ListAdapterDataSource {
              labelSectionController(with: movie.overview),
              labelSectionController(with: movie.genres!.count != 0 ? movie.genres!.minimalDescription : "Data unavailable"),
              labelSectionController(with: movie.languages!.count != 0 ? movie.languages!.minimalDescription : "Data unavailable"),
-             labelSectionController(with: "\(movie.duration) minutes")])
+             labelSectionController(with: "\(movie.duration) minutes"),
+             buttonSectionController()])
     }
     
     func emptyView(for listAdapter: ListAdapter) -> UIView? {
