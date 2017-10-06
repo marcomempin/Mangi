@@ -19,6 +19,7 @@
 		EA35324D1F870F830040AFAE /* DiscoverLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35324C1F870F830040AFAE /* DiscoverLoader.swift */; };
 		EA35324F1F870FE30040AFAE /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35324E1F870FE30040AFAE /* Movie.swift */; };
 		EA3532541F871B5F0040AFAE /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3532531F871B5F0040AFAE /* DiscoverViewController.swift */; };
+		EA3532591F8723030040AFAE /* SpinnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA3532581F8723030040AFAE /* SpinnerCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		EA35324C1F870F830040AFAE /* DiscoverLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverLoader.swift; sourceTree = "<group>"; };
 		EA35324E1F870FE30040AFAE /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		EA3532531F871B5F0040AFAE /* DiscoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
+		EA3532581F8723030040AFAE /* SpinnerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,15 +119,16 @@
 		EA35321C1F8707040040AFAE /* Mangi */ = {
 			isa = PBXGroup;
 			children = (
-				EA35323F1F870E030040AFAE /* Networking */,
 				EA35321D1F8707040040AFAE /* AppDelegate.swift */,
 				EA3532211F8707040040AFAE /* Main.storyboard */,
 				EA3532241F8707040040AFAE /* Assets.xcassets */,
 				EA3532261F8707040040AFAE /* LaunchScreen.storyboard */,
 				EA3532291F8707040040AFAE /* Info.plist */,
+				EA35323F1F870E030040AFAE /* Networking */,
 				EA3532441F870E540040AFAE /* Models */,
 				EA3532491F870F600040AFAE /* Systems */,
 				EA3532521F871B4D0040AFAE /* ViewControllers */,
+				EA3532571F8722F40040AFAE /* Views */,
 			);
 			path = Mangi;
 			sourceTree = "<group>";
@@ -170,6 +173,14 @@
 				EA3532531F871B5F0040AFAE /* DiscoverViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EA3532571F8722F40040AFAE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EA3532581F8723030040AFAE /* SpinnerCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,6 +404,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA3532591F8723030040AFAE /* SpinnerCell.swift in Sources */,
 				EA35324D1F870F830040AFAE /* DiscoverLoader.swift in Sources */,
 				EA3532541F871B5F0040AFAE /* DiscoverViewController.swift in Sources */,
 				EA35324F1F870FE30040AFAE /* Movie.swift in Sources */,
