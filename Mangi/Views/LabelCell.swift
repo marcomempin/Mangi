@@ -18,13 +18,17 @@ func labelSectionController(with text: String) -> ListSingleSectionController {
     
     let sizeBlock = { (item: Any, context: ListCollectionContext?) -> CGSize in
         guard let context = context else { return .zero }
-        return CGSize(width: context.containerSize.width, height: 40)
+        let width = context.containerSize.width
+        return CGSize(width: width, height: LabelCell.textHeight(text, width: width))
     }
     
     let sectionController = ListSingleSectionController(cellClass: LabelCell.self,
                                                         configureBlock: configureBlock,
                                                         sizeBlock: sizeBlock)
-    sectionController.selectionDelegate = sectionController.viewController as! ListSingleSectionControllerDelegate?
+    
+    if sectionController.viewController is DiscoverViewController {
+        sectionController.selectionDelegate = sectionController.viewController as! ListSingleSectionControllerDelegate?
+    }
     
     return sectionController
 }

@@ -28,7 +28,9 @@ func imageSectionController(with imageURL: String) -> ListSingleSectionControlle
                                                         configureBlock: configureBlock,
                                                         sizeBlock: sizeBlock)
     
-    sectionController.selectionDelegate = sectionController.viewController as! ListSingleSectionControllerDelegate?
+    if sectionController.viewController is DiscoverViewController {
+        sectionController.selectionDelegate = sectionController.viewController as! ListSingleSectionControllerDelegate?
+    }
     
     return sectionController
 }
