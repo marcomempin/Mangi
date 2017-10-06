@@ -26,11 +26,11 @@ final class Movie: NSObject, JSONAbleType {
     let posterPath: String
     let backdropPath: String?
     let overview: String
-    let genres: [Genre]
-    let language: [Language]
+    let genres: [Genre]?
+    let languages: [Language]?
     let duration: String
     
-    init(id: String, title: String, popularity: String, posterPath: String, backdropPath: String? = nil, overview: String, genres: [Genre], language: [Language], duration: String) {
+    init(id: String, title: String, popularity: String, posterPath: String, backdropPath: String? = nil, overview: String, genres: [Genre]? = nil, languages: [Language]? = nil, duration: String) {
         self.id = id
         self.title = title
         self.popularity = popularity
@@ -38,7 +38,7 @@ final class Movie: NSObject, JSONAbleType {
         self.backdropPath = backdropPath
         self.overview = overview
         self.genres = genres
-        self.language = language
+        self.languages = languages
         self.duration = duration
     }
     
@@ -51,11 +51,30 @@ final class Movie: NSObject, JSONAbleType {
         let posterPath = json["poster_path"].stringValue
         let backdropPath = json["backdrop_path"].string
         let overview = json["overview"].stringValue
-        let genres = json["genres"].arrayObject as! [Genre]
-        let language = json["spoken_languages"].arrayObject as! [Language]
+        
+        let genreJSONArray = json["genres"].arrayObject
+        var genres = [Genre]()
+        if genreJSONArray != nil {
+            for genreJSON in genreJSONArray! {
+                let json = JSON(genreJSON)
+                let genre = Genre(id: json["id"].stringValue, name: json["name"].stringValue)
+                genres.append(genre)
+            }
+        }
+        
+        let languageJSONArray = json["spoken_languages"].arrayObject
+        var languages = [Language]()
+        if languageJSONArray != nil {
+            for languageJSON in languageJSONArray! {
+                let json = JSON(languageJSON)
+                let genre = Language(iso: json["iso_639_1"].stringValue, name: json["name"].stringValue)
+                languages.append(genre)
+            }
+        }
+        
         let duration = json["runtime"].stringValue
         
-        return Movie(id: id, title: title, popularity: popularity, posterPath: posterPath, backdropPath: backdropPath, overview: overview, genres: genres, language: language, duration: duration)
+        return Movie(id: id, title: title, popularity: popularity, posterPath: posterPath, backdropPath: backdropPath, overview: overview, genres: genres, languages: languages, duration: duration)
     }
     
 }
