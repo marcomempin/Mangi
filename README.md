@@ -1,5 +1,5 @@
-# Mangi
-A Movie Discovery App
+# [Mangi](https://en.wikipedia.org/wiki/Cathay#Cathay_and_Mangi)
+A Movie Discovery App. 
 
 # Details about this project
   WAAAZZZUUP internet! This project uses the following frameworks:
